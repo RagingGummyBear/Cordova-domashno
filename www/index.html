@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head >
+        <!--
+         Customize this policy to fit your own app's needs. For more guidance, see:
+         https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+         Some notes:
+         * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+         * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+         * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+         * Enable inline JS: add 'unsafe-inline' to default-src
+         -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;">
+            <!--
+             <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos; data: gap: https://ssl.gstatic.com &apos;unsafe-eval&apos;; style-src &apos;self&apos; &apos;unsafe-inline&apos;; media-src *">
+             -->
+            <meta name="format-detection" content="telephone=no">
+                <meta name="msapplication-tap-highlight" content="no">
+                    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+                        <link rel="stylesheet" type="text/css" href="css/index.css">
+                            <link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
+                                <style>
+                                    /* For avoiding title truncation in wp8 */
+                                    .ui-header .ui-title {
+                                        overflow: visible !important;
+                                    }
+                                /* For fixing the absolute position issue for the default cordova gen page*/
+                                #cjp-accordion1 .app {
+                                    left: 5px !important;
+                                    margin: 5px !important;
+                                    position: relative !important;
+                                }
+                                </style>
+                                <title>Country Quiz</title>
+                                </head>
+    <body data-enhance="false" >
+        <!--
+         <div class="app">
+         -->
+        
+        <div align="center" >
+            <h1> Country Quiz </h1>
+            <br />
+            <img src="" height="100" width="100" id="playerImage">
+                <br>
+                <br>
+                
+                <div align="center" id="MainmenuDiv">
+                    
+                    <button id="newGameButton"  data-role="none" class="menuButton" > New Game </button>
+                    <br/>
+                    <br/>
+                    <button id ="menuSigninButton" data-role="none" class="menuButton"> Sign in </button>
+                    <br/>
+                    <br/>
+                    <button id="displayAchievements" class = "menuButton" data-role="none"> Achievements </button>
+                    <br/>
+                    <br/>
+                    
+                </div>
+                
+                
+                <div align="center" id="NewgameDiv">
+                    
+                    <button id = "takePhotoButton"  data-role="none" class="menuButton" >Take your photo</button>
+                    <br>
+                    <br>
+                    
+                    <div id = "nameselect" class="ojectiveDisplay">
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                    <br>
+                    
+                    <button id = "sayYourNameButton"  data-role="none" class="menuButton"  >Say your name</button>
+                    
+                    <button style=" display: none"   data-role="none" class="menuButton" > Stop recording</button>
+                    
+                    <br>
+                    <br>
+                    
+                    <button class="nextPlayerButton menuButton"  data-role="none"  > Add player </button>
+                    <br>
+                    <br>
+                    <button id="startGameButton"  data-role="none" class="menuButton" > Start game </button>
+                    <br>
+                    <br>
+                    
+                    
+                </div>
+                
+                
+                <div align="center" id="GameplayScreen1" >
+                    
+                    <h2 id = "objectivePara" class = "ojectiveDisplay"  > </h2>
+                    <h2 id = "contentPara" class = "contentDisplay"  data-role="none"></h2>
+                    <br>
+                    
+                    <p style="display: none">Player photo</p>
+                    
+                    <img src="" height="100" width="100" style="display: none">
+                        
+                        <label class="item item-input" style = "display: none">
+                            <!--
+                             <span class="input-label">Type the text</span>
+                             -->
+                            <input type="text">
+                                
+                                </label>
+                        
+                        <img src="" height="100" width="100" id = "gameplayImage" style = "display : none">
+                            
+                            <button class="nextPlayerButton menuButton"  data-role="none"  > Next player </button>
+                            
+                            <br>
+                            <br>
+                            
+                            
+                            </div>
+                
+                
+                <div align="center" id="GameplayScreen2">
+                    
+                    <div class = "ojectiveDisplay" >
+                        
+                        <h2> Pick the player who performed the best </h2>
+                        <br>
+                        <br>
+                        
+                        <div id = "votingTable">
+                            
+                        </div>
+                        
+                    </div>
+                    <button class="nextPlayerButton menuButton"  data-role="none" style = " display: none" > Next player </button>
+                    
+                    <br>
+                    <br>
+                    
+                    
+                </div>
+                
+                
+                <div align="center" id="GameplayScreen3">
+                    
+                    <p>Final scoreboard</p>
+                    <br>
+                    <div id = "scoreboardDiv">
+                        
+                    </div>
+                    
+                    <br>
+                    <br>
+                    
+                    
+                </div>
+                
+                <div id = "signinId" style = "display: none">
+                    
+                    <h1>Sign in</h1>
+                    
+                    <br/>
+                    <input value = "User name" id = "inputUsername" class = "myInputClass">
+                        <br/>
+                        <input value = "yourPassword" id = "inputPassword" type="password" class = "myInputClass">
+                            <br/>
+                            <div> <button id = "signInButton" class="menuButton" data-role="none">Sign in</button>  
+                                <button id = "signUnButton" class="menuButton" data-role="none">Sign up</button>
+                            </div>
+                            
+                            <br/>
+                            
+                            </div>
+                
+                
+                <button id="exitButton"  data-role="none" class="menuButton" > Exit </button>
+                <!--
+                 </div>
+                 -->
+                </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
+        <script type="text/javascript" id="jqm-trans-disable">
+            /* For having a faster transition */
+            
+            $(document).on('mobileinit', function () {
+                           $.mobile.ignoreContentEnabled = true;
+                           });
+                           /*
+                            $(document).on("mobileinit", function() {
+                            
+                            $.mobile.defaultPageTransition = "none";
+                            $.mobile.defaultDialogTransition = "none";
+                            $.mobile.ignoreContentEnabled=true;
+                            });
+                            */
+        
+        
+        
+            </script>
+        
+        <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
+        
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

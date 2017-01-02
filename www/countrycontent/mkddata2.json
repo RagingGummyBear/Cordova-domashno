@@ -1,0 +1,29 @@
+{
+  "playerNames": {
+    
+    "maleNames" : [
+      "Aleksandar",
+    "Nikola",
+    "Zoran",
+    "Goran",
+    "Dragan"
+    ],
+    
+    "femaleNames" : [
+      "Marija",
+      "Biljana",
+      "Elena",
+      "Vesna",
+      "Ljubica"
+      ]
+    
+  },
+  
+  "stageOne":[
+    
+    {
+      }
+    
+    
+    ]
+}

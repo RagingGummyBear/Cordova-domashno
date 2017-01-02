@@ -1,0 +1,48 @@
+{
+  "playerNames": {
+    
+    "maleNames" : [
+      "Aleksandar",
+    "Nikola",
+    "Zoran",
+    "Goran",
+    "Dragan"
+    ],
+    
+    "femaleNames" : [
+      "Marija",
+      "Biljana",
+      "Elena",
+      "Vesna",
+      "Ljubica"
+      ]
+    
+  },
+  "stages" : [
+  {
+    "objective" : "Pronounce the following letters: ",
+    "content" : [
+      "А Д Ж О Р У Џ",
+      "Б Ѓ Е З К Њ Ц",
+      "Г Ѕ И М Ќ Ч Ш",
+      "Е Ј Л Љ П Ф Х "
+      ]
+    
+  }, 
+  {
+    "objective" : "Translate the picture: ",
+    "content" : ["https://pixabay.com/static/uploads/photo/2016/02/15/13/26/horse-1201143_960_720.jpg" ,
+    "http://efdreams.com/data_images/dreams/lion/lion-03.jpg",
+    "http://media.caranddriver.com/images/media/51/2017-acura-nsx-inline2-1-photo-663299-s-original.jpg",
+    "http://pngimg.com/upload/book_PNG2115.png"
+    ]
+  },
+  {
+    "objective" : "Sing the following sentences: ",
+    "content" : ["Деца имам жена немам,\n Аџанак баџанак,\n Е, кој му стиска нека дојди,\n Аџанак баџанак.",
+    "Народе македонски,\n со какви идеи си ти?\n Доста веќе, разбуди се,\n свести се, не спи ти!",
+    "Еј, да имам, ко што немам\n Па да купам бел коњ\n И да јавам, дење ноќе\n И на јаве и на јаве и на сон"
+    ]
+  }
+  ]
+}

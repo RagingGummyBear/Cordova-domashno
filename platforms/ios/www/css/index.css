@@ -1,0 +1,234 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#4d4d4d;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #A7A7A7),
+    color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:20px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+    
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+    /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+        /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:30px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+
+button.menuButton {
+    -moz-box-shadow:inset 0px 34px 0px -15px #dc3d24;
+    -webkit-box-shadow:inset 0px 34px 0px -15px #dc3d24;
+    box-shadow:inset 0px 34px 0px -15px #dc3d24;
+    background-color:#a73f2d;
+    border:1px solid #121212;
+    display:inline-block;
+    cursor:pointer;
+    color:#e3ad57;
+    font-family:Arial;
+    font-weight:bold;
+    padding:9px 23px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #7a2a1d;
+    -webkit-border-radius: 12;
+    -moz-border-radius: 12;
+    border-radius: 12px;
+    
+}
+button.menuButton:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #941e1e), color-stop(1, #b32e1d));
+    background:-moz-linear-gradient(top, #941e1e 5%, #b32e1d 100%);
+    background:-webkit-linear-gradient(top, #941e1e 5%, #b32e1d 100%);
+    background:-o-linear-gradient(top, #941e1e 5%, #b32e1d 100%);
+    background:-ms-linear-gradient(top, #941e1e 5%, #b32e1d 100%);
+    background:linear-gradient(to bottom, #941e1e 5%, #b32e1d 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#941e1e', endColorstr='#b32e1d',GradientType=0);
+    background-color:#941e1e;
+}
+button.menuButton:active {
+    position:relative;
+    top:1px;
+}
+
+
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+#NewgameDiv {
+    display: none;
+}
+
+#GameplayScreen1{
+    display: none;
+}
+
+#GameplayScreen2
+{
+    display: none;
+}
+
+#GameplayScreen3{
+    display: none;
+}
+
+.ojectiveDisplay
+{
+    text-shadow:1px 1px 0 rgba(0,0,0,1);
+    font-weight:normal;
+    color:#E3AE57;
+    background-color:#232B2B;
+    border: 3px solid #DC3D24;
+    letter-spacing:1pt;
+    word-spacing:2pt;
+    text-align:center;
+    font-family:comic sans, comic sans ms, cursive, verdana, arial, sans-serif;
+    width: 80%;
+    
+    
+}
+.contentDisplay{
+    text-shadow:1px 1px 0 rgba(0,0,0,1);
+    font-weight:normal;
+    color:#FFFFFF;
+    background-color:#232B2B;
+    border: 3px solid #DC3D24;
+    letter-spacing:1pt;
+    word-spacing:2pt;
+    font-size:0.80em;
+    text-align:center;
+    font-family:comic sans, comic sans ms, cursive, verdana, arial, sans-serif;
+    word-wrap: break-word;
+    width: 80%;
+    
+}
+
+
+.playerNameButton  {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #232b2b), color-stop(1, #232b2b));
+    background:-moz-linear-gradient(top, #232b2b 5%, #232b2b 100%);
+    background:-webkit-linear-gradient(top, #232b2b 5%, #232b2b 100%);
+    background:-o-linear-gradient(top, #232b2b 5%, #232b2b 100%);
+    background:-ms-linear-gradient(top, #232b2b 5%, #232b2b 100%);
+    background:linear-gradient(to bottom, #232b2b 5%, #232b2b 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#232b2b', endColorstr='#232b2b',GradientType=0);
+    background-color:#232b2b;
+    border:3px solid #a73f2d;
+    display:inline-block;
+    cursor:pointer;
+    color:#e3ad57;
+    font-family:Arial;
+    font-size:19px;
+    padding:12px 37px;
+    text-decoration:none;
+}
+.playerNameButton:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #232b2b), color-stop(1, #232b2b));
+    background:-moz-linear-gradient(top, #232b2b 5%, #232b2b 100%);
+    background:-webkit-linear-gradient(top, #232b2b 5%, #232b2b 100%);
+    background:-o-linear-gradient(top, #232b2b 5%, #232b2b 100%);
+    background:-ms-linear-gradient(top, #232b2b 5%, #232b2b 100%);
+    background:linear-gradient(to bottom, #232b2b 5%, #232b2b 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#232b2b', endColorstr='#232b2b',GradientType=0);
+    background-color:#232b2b;
+}
+.playerNameButton:active {
+    position:relative;
+    top:1px;
+}
